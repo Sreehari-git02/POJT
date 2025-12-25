@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url('../assets/loginBg.jpg');
+    background-image: linear-gradient(rgba(192, 184, 184, 0.5), rgba(118, 117, 117, 0.5)), url('../assets/loginBg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,13 +22,16 @@ body {
     background: rgba(255, 255, 255, 0.15); 
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    width: 100%;
+    width: 90%; 
     max-width: 450px;
     text-align: center;
+    margin: 20px auto; 
 }
+
+
 
 .heading {
     color: #000000;
@@ -107,4 +110,39 @@ body {
 
 .loginLink a:hover {
     text-decoration: underline;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 480px) {
+    body {
+        min-height: 100svh; 
+        height: auto;
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .signupContainer {
+        padding: 1.5rem 1.25rem;
+        width: 100%;
+        margin: 10px 0;
+        border-radius: 15px;
+    }
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .inputGroup {
+        margin-bottom: 0.75rem;
+    }
+
+    .inputGroup input {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    #signupBtn {
+        padding: 14px;
+        font-size: 18px;
+    }
 }
