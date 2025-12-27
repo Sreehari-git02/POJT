@@ -1,3 +1,8 @@
+<?php 
+include 'connect.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +19,7 @@
         <!-- Login Form -->
         
         <div class="loginForm">
-            <form action="connect.php" method="POST">
+            <form action="login_action.php" method="POST">
                 <div class="inputGroup">
                         <label for="userIdentifier">Username/Email</label>
                         <input type="text" id="userIdentifier" name="userIdentifier" placeholder="Username/Email" required>
