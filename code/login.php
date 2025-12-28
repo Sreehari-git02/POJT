@@ -1,8 +1,4 @@
-<?php 
-include 'connect.php';
-?>
-
-
+<?php include 'connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +12,20 @@ include 'connect.php';
         <h1 class="heading">WELCOME BACK!</h1>
         <h3 class="loginHead">USER LOG-IN</h3>
 
-        <!-- Login Form -->
-        
         <div class="loginForm">
+            <?php if (isset($_GET['error'])): ?>
+                <p class="errorMessage">
+                    <?php 
+                        if ($_GET['error'] == "nouser") echo "No user found with that Email/Username.";
+                        if ($_GET['error'] == "wrongpass") echo "Incorrect password. Please try again.";
+                    ?>
+                </p>
+            <?php endif; ?>
+
             <form action="login_action.php" method="POST">
                 <div class="inputGroup">
-                        <label for="userIdentifier">Username/Email</label>
-                        <input type="text" id="userIdentifier" name="userIdentifier" placeholder="Username/Email" required>
+                    <label for="userIdentifier">Username/Email</label>
+                    <input type="text" id="userIdentifier" name="userIdentifier" placeholder="Username/Email" required>
                 </div>
 
                 <div class="inputGroup">
