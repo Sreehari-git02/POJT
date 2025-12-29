@@ -14,7 +14,6 @@ $user_id = $_SESSION['user_id'];
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     
-    // We select based on student ID AND user_id so users can't edit someone else's data
     $stmt = $conn->prepare("SELECT * FROM students WHERE id = ? AND user_id = ?");
     $stmt->bind_param("ii", $id, $user_id);
     $stmt->execute();

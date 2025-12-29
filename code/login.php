@@ -1,4 +1,13 @@
-<?php include 'connect.php'; ?>
+<?php 
+session_start(); // Start the session
+include 'connect.php'; 
+
+// If user is already logged in, redirect them to index.php
+if (isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
